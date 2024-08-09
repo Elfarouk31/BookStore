@@ -1,0 +1,25 @@
+﻿
+@model IEnumerable<BookStore.Models.AuthorViewModel>
+
+<table class="table table-striped">
+    <thead >
+        <tr>
+            <th>Id</th>
+            <th>Full Name</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td scope="row">@author.Id</td>
+                <td>@author.FullName</td>
+                <td><a class="btn btn-primary" asp-controller="Author" asp-action="Edit" asp-route-id="@author.Id">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Author" asp-action="Delete" asp-route-id="@author.Id">Delete</a></td>
+                <td></td>
+            </tr>   
+        }
+    </tbody>
+</table>

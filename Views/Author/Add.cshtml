@@ -1,0 +1,27 @@
+﻿@model BookStore.Models.AuthorViewModel
+
+<h2>Create New Author</h2>
+
+<form method="post" asp-action="Add">
+	<div class="row">
+		<div class="col-2">
+			<label class="form-label col-2" for="Id" asp-for="Id">Id</label>
+		</div>
+		<div class="col-3">
+			<input class="form-control col-3" name="Id" asp-for="Id" disabled/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-2">
+			<label class="form-label col-2" for="FullName" asp-for="FullName">FullName</label>
+		</div>
+		<div class="col-3">
+			<input class="form-control col-3" type="text" name="FullName" asp-for="FullName" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-2">
+			<button class="btn btn-primary mt-2" type="submit" asp-controller="Author" asp-action="Add">Save</button>
+		</div>
+	</div>
+</form>

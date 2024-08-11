@@ -1,0 +1,26 @@
+﻿@model List<BookStore.Models.BookViewModel>
+
+<h1>Books</h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Author</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var book in Model)
+		{
+			<tr>
+				<td>@book.Id</td>
+				<td>@book.Title</td>
+				<td>@book.Description</td>
+				<td>@book.Author</td>
+			</tr>
+		}
+	</tbody>
+</table>

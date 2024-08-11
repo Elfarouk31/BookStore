@@ -14,6 +14,7 @@
 		}
 		public void Add(AuthorViewModel Author)
 		{
+			Author.Id = authors.Max(x => x.Id) + 1;
 			authors.Add(Author);
 		}
 

@@ -14,21 +14,42 @@ namespace BookStore.Controllers
         }
         public IActionResult Index()
 		{
-			return View(authorRepository.List());
+			var authors = authorRepository.List();
+
+            return View(authors);
 		}
 
 		// Get: Author/Create
-		public IActionResult Create()
+		public IActionResult Add()
 		{
 			return View();
 		}
 
 		// Post:
 		[HttpPost]
-		public IActionResult Create(AuthorViewModel Author)
+		public IActionResult Add(AuthorViewModel author)
 		{
-			authorRepository.Add(Author);
+			authorRepository.Add(author);
 			return RedirectToAction("Index");
 		}
+
+		public IActionResult Edit(int Id)
+		{
+			return View(authorRepository.Find(Id));
+		}
+
+		[HttpPost]
+		public IActionResult Edit(AuthorViewModel author)
+		{
+			authorRepository.Update(author);
+			return RedirectToAction("Index");
+		}
+
+		public IActionResult Delete(int Id)
+		{
+			authorRepository.Delete(Id);
+			return RedirectToAction("Index");
+		}
+
 	}
 }

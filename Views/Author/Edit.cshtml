@@ -1,0 +1,15 @@
+﻿@model BookStore.Models.AuthorViewModel
+
+<form method="post" action="Edit">
+	<div class="row">
+		<label class="col-form-label" asp-for="Id">Id</label>
+		<input class="form-control" asp-for="Id" disabled/>
+	</div>
+	<div class="row">
+		<label class="col-form-label" asp-for="FullName">FullName</label>
+		<input class="form-control" asp-for="FullName" />
+	</div>
+	<div class="row">
+		<button class="btn btn-primary" type="submit">Save</button>
+	</div>
+</form>

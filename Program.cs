@@ -5,7 +5,6 @@ using BookStore.Models.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddMvc();
 builder.Services.AddSingleton<IBookStoreRepository<AuthorViewModel>, AuthorRepository>();
 builder.Services.AddSingleton<IBookStoreRepository<BookViewModel>, BookRepository>();

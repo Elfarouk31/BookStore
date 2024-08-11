@@ -1,6 +1,8 @@
 ﻿
-@model IEnumerable<BookStore.Models.AuthorViewModel>
+@model List<BookStore.Models.AuthorViewModel>
 
+<h2>Autors:</h2>
+<a class="btn btn-primary" asp-controller="Author" asp-action="Add">Add</a>
 <table class="table table-striped">
     <thead >
         <tr>
@@ -11,14 +13,13 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var author in Model)
+        @foreach (var author in Model)  
         {
             <tr>
                 <td scope="row">@author.Id</td>
                 <td>@author.FullName</td>
                 <td><a class="btn btn-primary" asp-controller="Author" asp-action="Edit" asp-route-id="@author.Id">Edit</a></td>
                 <td><a class="btn btn-danger" asp-controller="Author" asp-action="Delete" asp-route-id="@author.Id">Delete</a></td>
-                <td></td>
             </tr>   
         }
     </tbody>

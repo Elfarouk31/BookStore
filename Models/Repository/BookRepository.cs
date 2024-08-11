@@ -12,7 +12,8 @@
 		public BookRepository() { }
 		public void Add(BookViewModel Book)
 		{
-			Books.Add(Book);	 
+			Book.Id = Books.Max(x => x.Id) + 1;
+			Books.Add(Book);
 		}
 
 		public void Delete(int id)

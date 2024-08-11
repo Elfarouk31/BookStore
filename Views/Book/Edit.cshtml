@@ -1,0 +1,33 @@
+﻿@model BookStore.Models.BookViewModel
+
+<form method="post" asp-action="Edit">
+	<div class="row">
+		<div class="col-2">
+			<label class="form-control">Id</label>
+		</div>
+		<div class="col-3">
+			<input class="form-control" asp-for="Id"/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-2">
+			<label class="form-control">Title</label>
+		</div>
+		<div class="col-3">
+			<input class="form-control" asp-for="Title" />
+		</div>
+	</div>	
+	<div class="row">
+		<div class="col-2">
+			<label class="form-control">Description</label>
+		</div>
+		<div class="col-3">
+			<input class="form-control" asp-for="Description" />
+		</div>
+	</div>
+	<div class="row">
+		<button class="btn btn-primary" type="submit">Save</button>
+	</div>
+
+
+</form>

@@ -4,9 +4,9 @@
 	{
 		public List<BookViewModel> Books = new List<BookViewModel>() 
 		{
-			new BookViewModel { Id = 1, Title = "Alfa Bio", Description = "Alfa BIO"},
-			new BookViewModel { Id = 2, Title = "C#", Description = "C# Book"},
-			new BookViewModel { Id = 3, Title = "C++", Description = "C++ Book"}
+			new BookViewModel { Id = 1, Title = "Alfa Bio", Description = "Alfa BIO", Author = new AuthorViewModel{ Id = 0, FullName = "..Please Select Autho.."} },
+			new BookViewModel { Id = 2, Title = "C#", Description = "C# Book", Author = new AuthorViewModel{ Id = 0, FullName = ""}},
+			new BookViewModel { Id = 3, Title = "C++", Description = "C++ Book", Author = new AuthorViewModel{ Id = 0, FullName = ""}}
 		};
 
 		public BookRepository() { }
@@ -40,7 +40,7 @@
 			{
 				Book.Title = UpdateBook.Title;
 				Book.Description = UpdateBook.Description;
-				Book.Author.FullName = UpdateBook.Author.FullName;
+				Book.Author = UpdateBook.Author;
 			}
 		}
 	}

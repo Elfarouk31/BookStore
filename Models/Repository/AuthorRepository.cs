@@ -7,9 +7,10 @@
 		{
 			authors = new List<AuthorViewModel>()
 		{
-			new AuthorViewModel { Id = 1, FullName = "Alfarouk"},
-			new AuthorViewModel { Id = 2, FullName = "Mohamed"},
-			new AuthorViewModel { Id = 3, FullName = "Mahmoud"}
+				new AuthorViewModel { Id = 0, FullName = "..Please Select Autho.." },
+				new AuthorViewModel { Id = 1, FullName = "Alfarouk"},
+				new AuthorViewModel { Id = 2, FullName = "Mohamed"},
+				new AuthorViewModel { Id = 3, FullName = "Mahmoud"}
 		};
 		}
 		public void Add(AuthorViewModel Author)
@@ -30,7 +31,6 @@
 
 		public IList<AuthorViewModel> List()
 		{
-			Console.WriteLine(authors.FirstOrDefault());
 			return authors;
 		}
 

@@ -1,7 +1,7 @@
 ﻿@model List<BookStore.Models.BookViewModel>
 
 <h1>Books</h1>
-<a class="btn btn-primary" asp-controller="Book" asp-action="Create">Add</a>
+<a class="btn btn-primary" asp-controller="Book" asp-action="Create">Create</a>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -20,8 +20,7 @@
 				<td>@book.Id</td>
 				<td>@book.Title</td>
 				<td>@book.Description</td>
-				@* <td>@book.Author.FullName</td> *@
-				<td></td>
+				<td>@book.Author.FullName</td>
 				<td><a class="btn btn-primary" asp-controller="Book" asp-action="Edit" asp-route-id="@book.Id">Edit</a></td>
 				<td><a class="btn btn-danger" asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id">Delete</a></td>
 			</tr>

@@ -1,25 +1,30 @@
-﻿@model BookStore.Models.BookViewModel
+﻿@model BookStore.ViewModels.BookAuthorViewModel
+
 
 <form method="post" asp-action="Edit">
+	@if (ViewBag.Massage == "Please select Author")
+	{
+		<h4 class="alert alert-danger">@ViewBag.Massage</h4>
+	}
 	<div class="row">
 		<div class="col-2">
-			<label class="form-label">Id</label>
+			<label class="form-label" asp-for="Id" hidden>Id</label>
 		</div>
 		<div class="col-4">
-			<input class="form-control" asp-for="Id" disabled/>
+			<input class="form-control" asp-for="Id" disabled hidden/>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-2">
-			<label class="form-label">Title</label>
+			<label class="form-label" asp-for="Title">Title</label>
 		</div>
 		<div class="col-4">
 			<input class="form-control" asp-for="Title" />
 		</div>
-	</div>	
+	</div>
 	<div class="row">
 		<div class="col-2">
-			<label class="form-label">Description</label>
+			<label class="form-label" asp-for="Description">Description</label>
 		</div>
 		<div class="col-4">
 			<input class="form-control" asp-for="Description" />
@@ -27,10 +32,10 @@
 	</div>
 	<div class="row">
 		<div class="col-2">
-			<label class="form-label">Author</label>
+			<label class="form-label" asp-for="AuthorId">Author</label>
 		</div>
 		<div class="col-4">
-			<input class="form-control" asp-for="Author.FullName" />
+			<select class="form-control" asp-for="AuthorId" asp-items="@(new SelectList(Model.Authors, "Id", "FullName"))"></Select>
 		</div>
 	</div>
 	<div class="row">

@@ -31,6 +31,12 @@ namespace BookStore.Controllers
 			return View();
 		}
 
+		[HttpGet]
+		public IActionResult Edit(int id)
+		{
+			return View(bookRepository.Find(id));	
+		}	
+
 		[HttpPost]
 		public IActionResult Edit(BookViewModel book)
 		{

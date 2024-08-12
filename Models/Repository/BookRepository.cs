@@ -40,7 +40,7 @@
 			{
 				Book.Title = UpdateBook.Title;
 				Book.Description = UpdateBook.Description;
-				Book.Author = UpdateBook.Author;
+				Book.Author.FullName = UpdateBook.Author.FullName;
 			}
 		}
 	}
